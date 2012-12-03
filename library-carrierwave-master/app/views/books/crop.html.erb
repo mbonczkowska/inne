@@ -1,0 +1,18 @@
+<h1>Crop Cover</h1>
+
+<%= image_tag @book.cover_url, id: "cropbox" %>
+
+<%= simple_form_for @book, html: { id: "coords", class: "coords form-horizontal" } do |f| %>
+  <% %w[x y w h].each do |attr| %>
+    <%= f.input "crop_#{attr}", as: :hidden %>
+  <% end %>
+  <div class="form-actions">
+    <%= f.button :submit, t("helpers.links.crop"), class: "btn-primary" %>
+  </div>
+<% end %>
+
+<h4>TODO</h4>
+<p>Better UI:</p>
+<ul>
+  <li><a href="https://github.com/tapmodo/Jcrop/blob/master/demos/jquery-ui.html">jQuery UI</a>
+</ul>

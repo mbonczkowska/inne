@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "myLibrary" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">myLibrary</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Source (Github)", "https://github.com/wbzyl/library-carrierwave" %>
+              <li><%= link_to "Carrierwave", "https://github.com/jnicklas/carrierwave" %>
+              <li><%= link_to "Jcrop", "http://deepliquid.com/content/Jcrop.html" %>
+              <li><%= link_to "One Paper per Day", "https://twitter.com/onepaperperday"  %>
+              <li><%= link_to "PBI", "http://www.pbi.edu.pl/" %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; 2012/13 by ASI</p>
+      </footer>
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
+  </body>
+</html>
